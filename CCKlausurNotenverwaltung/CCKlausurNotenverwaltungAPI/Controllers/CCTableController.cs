@@ -12,12 +12,12 @@ namespace CCKlausurNotenverwaltungAPI.Controllers
     public class CCTableController : ControllerBase
     {
 
-        [HttpGet]
-        public  StudentDTO Get([FromBody] int sutdentId)
-        {
-            CCTableService cCTableService = new CCTableService();
-            return cCTableService.GetStutend(sutdentId);
-        }
+        //[HttpGet]
+        //public  StudentDTO Get([FromBody] int sutdentId)
+        //{
+        //    CCTableService cCTableService = new CCTableService();
+        //    return cCTableService.GetStutend(sutdentId);
+        //}
 
         // POST api/<CCTableController>
         [HttpPost]
@@ -34,13 +34,13 @@ namespace CCKlausurNotenverwaltungAPI.Controllers
             await cCTableService.CreateAndInsertAsync(newStudent);
         }
 
-        //[HttpGet]
-        //public async Task<IList<LVBewertungKompakt>> Get(string lvBezeichnung)
-        //{
-        //    CCTableService ccTableService = new CCTableService();
-        //    return await ccTableService.GetBewertungenByLV(lvBezeichnung);
+        [HttpGet]
+        public async Task<IList<LVBewertungKompakt>> Get(string lvBezeichnung)
+        {
+            CCTableService ccTableService = new CCTableService();
+            return await ccTableService.GetBewertungenByLV(lvBezeichnung);
 
-        //}
+        }
 
     }
 }
