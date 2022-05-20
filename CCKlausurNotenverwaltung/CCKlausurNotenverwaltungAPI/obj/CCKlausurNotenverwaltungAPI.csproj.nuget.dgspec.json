@@ -54,7 +54,7 @@
             },
             "Azure.Storage.Queues": {
               "target": "Package",
-              "version": "[12.2.0, )"
+              "version": "[12.10.0, )"
             },
             "Microsoft.Azure.Cosmos": {
               "target": "Package",

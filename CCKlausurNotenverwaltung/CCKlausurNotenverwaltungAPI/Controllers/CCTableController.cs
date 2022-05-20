@@ -34,13 +34,13 @@ namespace CCKlausurNotenverwaltungAPI.Controllers
             await cCTableService.CreateAndInsertAsync(newStudent);
         }
 
-        [HttpGet]
-        public async Task<IList<LVBewertungKompakt>> Get(string lvBezeichnung)
-        {
-            CCTableService ccTableService = new CCTableService();
-            return await ccTableService.GetBewertungenByLV(lvBezeichnung);
+        //[HttpGet]
+        //public async Task<IList<LVBewertungKompakt>> Get(string lvBezeichnung)
+        //{
+        //    CCTableService ccTableService = new CCTableService();
+        //    return await ccTableService.GetBewertungenByLV(lvBezeichnung);
 
-        }
+        //}
 
     }
 }

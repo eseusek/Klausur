@@ -1,4 +1,6 @@
-﻿namespace CCKlausurNotenverwaltungAPI.Models
+﻿using Newtonsoft.Json;
+
+namespace CCKlausurNotenverwaltungAPI.Models
 {
     public class LVBewertung
     {
@@ -9,5 +11,10 @@
         public string LVBezeichnung { get; set; }
         public double PunkteTheorie { get; set; }
         public double PunktePraxis { get; set; }
+
+        public override string ToString()
+        {
+            return JsonConvert.SerializeObject(this);
+        }
     }
 }

@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "Azure.Core/1.22.0": {
+      "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
@@ -63,10 +63,11 @@
           "lib/netstandard2.0/Azure.Storage.Blobs.dll": {}
         }
       },
-      "Azure.Storage.Common/12.2.0": {
+      "Azure.Storage.Common/12.11.0": {
         "type": "package",
         "dependencies": {
-          "Azure.Core": "1.0.2"
+          "Azure.Core": "1.24.0",
+          "System.IO.Hashing": "6.0.0"
         },
         "compile": {
           "lib/netstandard2.0/Azure.Storage.Common.dll": {}
@@ -89,11 +90,12 @@
           "lib/netstandard2.0/Azure.Storage.Files.Shares.dll": {}
         }
       },
-      "Azure.Storage.Queues/12.2.0": {
+      "Azure.Storage.Queues/12.10.0": {
         "type": "package",
         "dependencies": {
-          "Azure.Core": "1.0.2",
-          "Azure.Storage.Common": "12.2.0"
+          "Azure.Storage.Common": "12.11.0",
+          "System.Memory.Data": "1.0.2",
+          "System.Text.Json": "4.7.2"
         },
         "compile": {
           "lib/netstandard2.0/Azure.Storage.Queues.dll": {}
@@ -1029,6 +1031,18 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll": {}
+        }
+      },
+      "System.IO.Hashing/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.IO.Hashing.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/System.IO.Hashing.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
       "System.Linq/4.3.0": {
@@ -2055,16 +2069,16 @@
     }
   },
   "libraries": {
-    "Azure.Core/1.22.0": {
-      "sha512": "ze/xRCHSSDe5TIk5vBDbVrauW1EN7UIbnBvIBfMH8KSt/I9+/7yPAjTBDgNBk0IwG6WBV+BBHp4IUtS/PGAQwQ==",
+    "Azure.Core/1.24.0": {
+      "sha512": "+/qI1j2oU1S4/nvxb2k/wDsol00iGf1AyJX5g3epV7eOpQEP/2xcgh/cxgKMeFgn3U2fmgSiBnQZdkV+l5y0Uw==",
       "type": "package",
-      "path": "azure.core/1.22.0",
+      "path": "azure.core/1.24.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "CHANGELOG.md",
         "README.md",
-        "azure.core.1.22.0.nupkg.sha512",
+        "azure.core.1.24.0.nupkg.sha512",
         "azure.core.nuspec",
         "azureicon.png",
         "lib/net461/Azure.Core.dll",
@@ -2122,20 +2136,20 @@
         "pkgicon.png"
       ]
     },
-    "Azure.Storage.Common/12.2.0": {
-      "sha512": "neZaUGmU9UmvXPs94I5fC42o8AaQLn9IG/xSdfs8POloArwdycAbC9CqtlIJLVvVSw5O/6eagRSo/7mYhIC8gg==",
+    "Azure.Storage.Common/12.11.0": {
+      "sha512": "BPZ1JwYvehHGoTSXhXfAmwtFYejJghE6dkKvpZtPIL0DulzSIJdll9OZI+h5W+3wLYK0yn5hc1r6mvId0q4npA==",
       "type": "package",
-      "path": "azure.storage.common/12.2.0",
+      "path": "azure.storage.common/12.11.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "CHANGELOG.md",
         "README.md",
-        "azure.storage.common.12.2.0.nupkg.sha512",
+        "azure.storage.common.12.11.0.nupkg.sha512",
         "azure.storage.common.nuspec",
+        "azureicon.png",
         "lib/netstandard2.0/Azure.Storage.Common.dll",
-        "lib/netstandard2.0/Azure.Storage.Common.xml",
-        "pkgicon.png"
+        "lib/netstandard2.0/Azure.Storage.Common.xml"
       ]
     },
     "Azure.Storage.Files.Shares/12.1.0": {
@@ -2154,20 +2168,20 @@
         "pkgicon.png"
       ]
     },
-    "Azure.Storage.Queues/12.2.0": {
-      "sha512": "i78L7cu95JZPKHvRPA/Xnom7bVyxbnsn/KtFdKnRwaBRUhnuM7xPBTzpReZB7+gw4i6s1VJDSbD2xLJXKi+XNg==",
+    "Azure.Storage.Queues/12.10.0": {
+      "sha512": "RD+rDy2O763jJXpvaOd03I3NSIrGpjq5YPzVkPydXnhMIzvjrv3X6ogDl+QgZs1ssuRcqjCh0RBvaaW6tt2EYw==",
       "type": "package",
-      "path": "azure.storage.queues/12.2.0",
+      "path": "azure.storage.queues/12.10.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "CHANGELOG.md",
         "README.md",
-        "azure.storage.queues.12.2.0.nupkg.sha512",
+        "azure.storage.queues.12.10.0.nupkg.sha512",
         "azure.storage.queues.nuspec",
+        "azureicon.png",
         "lib/netstandard2.0/Azure.Storage.Queues.dll",
-        "lib/netstandard2.0/Azure.Storage.Queues.xml",
-        "pkgicon.png"
+        "lib/netstandard2.0/Azure.Storage.Queues.xml"
       ]
     },
     "Microsoft.Azure.Cosmos/3.27.0": {
@@ -4174,6 +4188,29 @@
         "ref/xamarinwatchos10/_._",
         "system.io.filesystem.primitives.4.3.0.nupkg.sha512",
         "system.io.filesystem.primitives.nuspec"
+      ]
+    },
+    "System.IO.Hashing/6.0.0": {
+      "sha512": "Rfm2jYCaUeGysFEZjDe7j1R4x6Z6BzumS/vUT5a1AA/AWJuGX71PoGB0RmpyX3VmrGqVnAwtfMn39OHR8Y/5+g==",
+      "type": "package",
+      "path": "system.io.hashing/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.IO.Hashing.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.IO.Hashing.dll",
+        "lib/net461/System.IO.Hashing.xml",
+        "lib/net6.0/System.IO.Hashing.dll",
+        "lib/net6.0/System.IO.Hashing.xml",
+        "lib/netstandard2.0/System.IO.Hashing.dll",
+        "lib/netstandard2.0/System.IO.Hashing.xml",
+        "system.io.hashing.6.0.0.nupkg.sha512",
+        "system.io.hashing.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.Linq/4.3.0": {
@@ -7061,7 +7098,7 @@
       "Azure.Data.Tables >= 12.5.0",
       "Azure.Storage.Blobs >= 12.3.0",
       "Azure.Storage.Files.Shares >= 12.1.0",
-      "Azure.Storage.Queues >= 12.2.0",
+      "Azure.Storage.Queues >= 12.10.0",
       "Microsoft.Azure.Cosmos >= 3.27.0",
       "Microsoft.Extensions.Azure >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3",
@@ -7121,7 +7158,7 @@
           },
           "Azure.Storage.Queues": {
             "target": "Package",
-            "version": "[12.2.0, )"
+            "version": "[12.10.0, )"
           },
           "Microsoft.Azure.Cosmos": {
             "target": "Package",
