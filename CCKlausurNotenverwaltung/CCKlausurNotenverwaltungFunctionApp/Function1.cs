@@ -27,15 +27,20 @@ namespace CCKlausurNotenverwaltungFunctionApp
     public class Function1
     {
         [FunctionName("Function1")]
-        [return: Table("Bewertungen", Connection = "mylocaltable")]
-        public LVGesamtbewertung Run([QueueTrigger("queuelvbewertung", Connection = "mylocalqueue")]string myQueueItem, ILogger log)
+        [return: Table("Bewertungen", Connection = "StorageConnectionString")]
+        public LVGesamtbewertung Run([QueueTrigger("queuelvbewertung", Connection = "StorageConnectionString")]string myQueueItem, ILogger log)
         {
-             log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
+            log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
 
             LVGesamtbewertung tableRow = new LVGesamtbewertung();
 
-            //TODO - Aufgabe 2
-          
+            var gesamtBewertung = JsonConvert.DeserializeObject<LVBewertung>(myQueueItem);
+
+            tableRow.PartitionKey = gesamtBewertung.LVBezeichnung;
+            tableRow.PunkteGesamt = gesamtBewertung.PunktePraxis + gesamtBewertung.PunkteTheorie;
+            tableRow.PersonenKennzeichen = gesamtBewertung.StudPersNummer.ToString();
+            tableRow.RowKey = Guid.NewGuid().ToString();
+
             return tableRow;
         }
     }
